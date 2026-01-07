@@ -20,6 +20,7 @@ class Supplier(models.Model):
     quality = models.CharField(max_length=100)
     lead_time = models.PositiveIntegerField(help_text="Lead time in days")
     urun = models.ForeignKey(Urun, on_delete=models.CASCADE, related_name='suppliers', help_text="Ürün bu tedarikçi tarafından teslim edilir")
+    miktar = models.PositiveIntegerField(help_text="Amount this supplier can provide")
     cost = models.DecimalField(max_digits=10, decimal_places=2)
     olusturma_tarihi = models.DateTimeField(auto_now_add=True)
     guncelleme_tarihi = models.DateTimeField(auto_now=True)
